@@ -42,7 +42,7 @@ Create an entity relationship diagram. Do not move on until you have.
 
 * Get the project directory setup (using the express generator, or from scratch using npm init, npm install etc.).
 
-* Create a new repo on github and prepare it for the initial check in.
+* Fork this repo on github and prepare it for the initial check in.
 
 * Check in your code
 
