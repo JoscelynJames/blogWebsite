@@ -136,8 +136,6 @@ Take pictures of your mockups and check them into your repo.
 
 * Use bootstrap or another style framework of your choice. Plan ahead and use a grid system for your layout.
 
-* Focus on creating one page at a time, focus on layout/styles and then focus on ajax requests/DOM manipulation.
-
 * After you have finished a page, switch focus areas for the creation of the next page.
 
 * Work efficiently.  
