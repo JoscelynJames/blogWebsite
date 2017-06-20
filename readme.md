@@ -5,11 +5,13 @@
 Build a Full Stack app that allows users to CRUD blog posts.
 
 <hr>
+
 # Wait!!!!
 
 Before you rush in, scan this whole document. Soak it in. Take your time.
 
 <hr>
+
 # Think Things Through Thoroughly
 
 These instructions provide a general outline and leave a lot of room for interpretation. They may not list exactly everything you need to do to build this CRUD app.
@@ -17,6 +19,7 @@ These instructions provide a general outline and leave a lot of room for interpr
 Be smart, be pragmatic, be excellent to each other.
 
 <hr>
+
 # gBlog Relationships
 
 gBlog consists of the following relationships:
@@ -32,6 +35,7 @@ gBlog consists of the following relationships:
 > Do not worry about authentication and authorization right now. Auth is a stretch goal. Get your blog post CRUD working and UI created FIRST.
 
 <hr>
+
 # Steps for Success
 
 ## 1. Think and Diagram FIRST
