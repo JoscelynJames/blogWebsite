@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/JoscelynJames/gBlog#readme",
   "dependencies": {
+    "express": "^4.15.4",
+    "handlebars": "^4.0.10",
     "knex": "^0.13.0",
     "pg": "^7.3.0"
   }
