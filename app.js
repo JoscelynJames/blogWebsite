@@ -11,6 +11,12 @@ app.use(bodyParser.json())
 
 app.use(routes)
 
+app.use(function (req, res, next) {
+  const err = new Error('not found')
+  err.status = 404
+  next(err)
+})
+
 app.listen(port, () => {
   console.log('Listening on port ' + port)
 })
