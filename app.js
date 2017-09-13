@@ -4,6 +4,7 @@ const port = process.env.PORT || 3210
 const routes = require('./routes/routes.js')
 const bodyParser = require('body-parser')
 const cors = require('cors')
+require('dontenv').config()
 
 app.use(cors())
 app.use(bodyParser.urlencoded({ extended: false }))
