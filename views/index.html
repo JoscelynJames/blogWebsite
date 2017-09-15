@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css"  crossorigin="anonymous" />
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+  <!-- Start nav bar -->
+  <nav id="nav-bar">
+    <ul class="menu menu-hover-lines align-spaced">
+      <li>Gblog</li>
+      <li class="active"><a >Home</a></li>
+      <li><a href="/add-blog/index.html">Blog</a></li>
+      <li><a >You</a></li>
+    </ul>
+  </nav>
+  <!-- End nav bar -->
+  <!-- Start main blog -->
+  <section class="col between" id="blog-main">
+    <div class="article-row-section">
+      <div class="article-row-section-inner">
+        <div class="row">
+          <div class="medium-6 large-4 columns">
+            <h2 id="blogss">Blogs</h2>
+            <a href="/add-blog/index.html">
+              <img id="add-icon" src="add.png">
+            </a>
+            <a >
+              <img id="edit-icon" src="edit.png">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script id="blog-template" type="text/x-handlebars-template">
+      {{#each blogs}}
+        <div class="tile">
+          <a >
+            <img class="edit-icon" src="edit.png">
+          </a>
+          <a href="/deleteblog?={{id}}">
+            <img class="delete-icon" src="delete.png">
+          </a>
+          <article class="article-row">
+            <div class="article-row-content">
+              <a href="/blog/index.html?={{id}}">
+                <h1 id={{id}} class="article-row-content-header title"> {{title}} </h1>
+              </a>
+              <p class="article-row-content-author author"> {{author}} </p>
+              <time class="article-row-content-time time"> {{creation_time}} </time>
+              <p class="article-row-content-description body"> {{body}} </p>
+            </div>
+          </article>
+        </div>
+      {{/each}}
+    </script>
+  </section>
+  <!-- end of blogs -->
+  <!-- start footer -->
+  <footer>
+    <div class="col">
+      <div class="row">
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js" crossorigin="anonymous"></script>
+
+  <script src="script.js"></script>
+
+  </body>
+</html>

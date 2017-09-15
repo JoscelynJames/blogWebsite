@@ -33,9 +33,18 @@ router.get('/blog/:id/comments', (req, res) => {
 router.post('/blogpost', (req, res) => {
   queries
     .post
-    .makePost(req)
+    .makeBlogPost(req, res)
     .then(post => {
-      res.json(post)
+      res.send(post)
+    })
+})
+
+router.post('/commentpost', (req, res) => {
+  queries
+    .post
+    .makeCommentPost(req, res)
+    .then(post => {
+      res.send('sucsess')
     })
 })
 
@@ -48,10 +57,28 @@ router.patch('/editblog', (req, res) => {
     })
 })
 
-router.delete('/deleteblog', (req, res) => {
+router.patch('/editcomment', (req, res) => {
+  queries
+    .patch
+    .makeCommenntPatch(req)
+    .then(patch => {
+      res.json(patch)
+    })
+})
+
+router.delete('/deleteblog/:id', (req, res) => {
   queries
     .delete
     .makeBlogDelete(req)
+    .then(deleted => {
+      res.json(deleted)
+    })
+})
+
+router.delete('/deletecomment/:id', (req, res) => {
+  queries
+    .delete
+    .makeCommentDelete(req)
     .then(deleted => {
       res.json(deleted)
     })

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css"  crossorigin="anonymous" />
+
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- Nav Bae -->
+    <nav id="nav-bar">
+      <ul class="menu menu-hover-lines align-spaced">
+        <li>Gblog</li>
+        <li><a href="../index.html">Home</a></li>
+        <li class="active"><a >Blog</a></li>
+        <li><a >You</a></li>
+    </nav>
+
+    <section id="blog">
+      <a>
+        <img id="edit-icon" src="../edit.png">
+      </a>
+      <a>
+        <img id="delete-icon" src="../delete.png">
+      </a>
+    </section>
+
+    <section id="blog-post">
+      <!-- jQuery appends html here -->
+    </section>
+
+    <section id="comments">
+      <!-- jQuery appends html here -->
+    </section>
+
+    <!-- Comments -->
+    <section id="comments">
+
+      <section id="comment-feed">
+        <div class="article-row-section">
+        <div class="article-row-section-inner">
+          <h2 class="article-row-section-header">Comments</h2>
+          <!--handlebars template -->
+          <script id="comments-template" type="text/x-handlebars-template">
+            {{#each comments}}
+              <div class="tile">
+                <a>
+                  <img class="edit-icon" src="../edit.png">
+                </a>
+                <a>
+                  <span>{{id}}<span>
+                  <img id={{id}} class="delete-comment-icon" src="../delete.png">
+                </a>
+                <article class="article-row">
+                  <div class="article-row-content">
+                    <h4 class="article-row-content-author author"> {{author_name}} </h4>
+                    <time class="article-row-content-time time"> {{creation_time}} </time>
+                    <p class="article-row-content-description body"> {{body}} </p>
+                  </div>
+                </article>
+              </div>
+            {{/each}}
+          </script>
+
+      </section>
+
+      <h1>Leave A Comment</h1>
+        <form action="">
+          <div class="row">
+            <div class="small-12 column">
+              <div class="form-floating-label">
+                <input type="text" id="name" name="name">
+                <label for="name">Your Name</label>
+              </div>
+            </div>
+
+            <div class="small-12 column">
+              <div class="form-floating-label">
+                <textarea name="body" id="body" rows="5" placeholder=""></textarea>
+                <label for="textarea">Join the conversation</label>
+              </div>
+            </div>
+          </div>
+        </form>
+        <a id="submit-comment-button" class="button expanded" >Submit comment</a>
+    </section>
+
+    <footer>
+      <div class="col">
+        <div class="row">
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+
+    <script src="blog.js"></script>
+
+  </body>
+</html>

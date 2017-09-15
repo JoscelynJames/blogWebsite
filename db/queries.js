@@ -14,6 +14,7 @@ module.exports = {
     },
     comments: {
       getAllComments: function (req) {
+        req.params.id
         return knex('comment')
           .select('*')
           .where({ blog_id: req.params.id })
@@ -21,7 +22,7 @@ module.exports = {
     }
   },
   post: {
-    makePost: function (req) {
+    makeBlogPost: function (req , res) {
       return knex('blog_post')
         .insert([{
           author: req.body.author,
@@ -30,9 +31,21 @@ module.exports = {
           creation_time: new Date(),
           website_id: 1
         }])
-        .then(posting => {
-          console.log(posting)
+        .then((posting) => {
+          let blogBody = req.body.body;
+          return knex('blog_post')
+            .select('id')
+            .where({body: blogBody})
         })
+    },
+    makeCommentPost: function(req, res) {
+      return knex('comment')
+        .insert([{
+          body: req.body.body,
+          author_name: req.body.name,
+          creation_time: new Date(),
+          blog_id: req.body.blog_id
+        }])
     }
   },
   patch: {
@@ -59,12 +72,12 @@ module.exports = {
   delete: {
     makeBlogDelete: function (req) {
       return knex('blog_post')
-        .where({id: req.body.id})
+        .where({id: req.params.id})
         .del()
     },
     makeCommentDelete: function (req) {
       return knex('comment')
-        .where({id: req.body.id})
+        .where({id: req.params.id})
         .del()
     }
   }

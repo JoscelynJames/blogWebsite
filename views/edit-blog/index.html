@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css"  crossorigin="anonymous" />
+    <meta charset="utf-8">
+    <title>Edit Blog</title>
+  </head>
+  <body>
+<!-- Start nav bar-->
+  <nav id="nav-bar">
+    <ul class="menu menu-hover-lines align-spaced">
+      <li>Gblog</li>
+      <li class="active"><a >Home</a></li>
+      <li><a href="/add-blog/index.html">Blog</a></li>
+      <li><a >You</a></li>
+    </ul>
+  </nav>
+<!-- End nav bar-->
+
+<!-- Start of form section -->
+  <section id="edit-form-section">
+    <form action="">
+      <div class="row">
+        <div class="small-12 column">
+          <div class="form-floating-label">
+            <input type="email" id="title" name="title" required>
+            <label for="title">Title</label>
+          </div>
+        </div>
+        <div class="small-12 column">
+          <div class="form-floating-label">
+            <input type="text" id="name" name="name">
+            <label for="password">What you go by</label>
+          </div>
+        </div>
+        <div class="small-12 column">
+          <div class="form-floating-label">
+            <textarea name="body" id="body" rows="5" placeholder=""></textarea>
+            <label for="textarea">Body</label>
+          </div>
+        </div>
+      </div>
+    </form>
+    <a id="submit-blog-button" class="button expanded" >Edit That Blog!</a>
+  </section>
+<!-- End of edit blog section -->
+
+<!-- Start footer-->
+  <footer>
+    <div class="col">
+      <div class="row">
+      </div>
+    </div>
+  </footer>
+<!-- End footer-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/js/foundation.min.js" crossorigin="anonymous"></script>
+    <script src="edit-blog.js"></script>
+  </body>
+</html>
