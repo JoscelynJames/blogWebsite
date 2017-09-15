@@ -9,12 +9,15 @@ $(document).ready(() => {
   })
     .done((res) => {
       $('#blog-post').append(`
-        <div>
+        <div id=${res[0].id}>
           <h1>${res[0].title}</h1>
           <h3>${res[0].author}</h3>
           <p id="blog-body">${res[0].body}</p>
         </div>
       `);
+      //set edit icon id to blog id for later use
+
+      $('#blog > a').attr('href', `../edit-blog/index.html?=${query}`)
     })
     .fail((err) => {
       console.log('err', err);
@@ -37,6 +40,7 @@ $(document).ready(() => {
       //word clamp
       var creationTime = $('.time');
       creationTime.text(creationTime.text().substring(0,11))
+
     })
     .fail((err) => {
       console.log('err', err);
@@ -107,6 +111,7 @@ $(document).ready(() => {
         window.location.href = '../index.html?=' + id;
       })
     })
+
   }, 500);
 
 

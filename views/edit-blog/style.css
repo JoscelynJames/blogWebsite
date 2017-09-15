@@ -103,7 +103,7 @@
 }
 
 .form-floating-label input:focus ~ label,
-.form-floating-label input:disabled[value] ~ label,
+/*.form-floating-label input:disabled[value] ~ label,*/
 .form-floating-label.has-value input ~ label {
   top: 0;
   font-size: 14px;

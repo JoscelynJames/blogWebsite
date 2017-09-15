@@ -12,7 +12,7 @@
     <ul class="menu menu-hover-lines align-spaced">
       <li>Gblog</li>
       <li class="active"><a >Home</a></li>
-      <li><a href="/add-blog/index.html">Blog</a></li>
+      <li><a class="active" href="/add-blog/index.html">Blog</a></li>
       <li><a >You</a></li>
     </ul>
   </nav>
@@ -38,7 +38,7 @@
     <script id="blog-template" type="text/x-handlebars-template">
       {{#each blogs}}
         <div class="tile">
-          <a >
+          <a href="/edit-blog/index.html?={{id}}">
             <img class="edit-icon" src="edit.png">
           </a>
           <a href="/deleteblog?={{id}}">

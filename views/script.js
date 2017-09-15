@@ -42,7 +42,7 @@ $(document).ready(() => {
         type: 'DELETE'
       })
       .done((res) => {
-        console.log('res', res);
+        location.reload()
       })
     })
   }, 500);
