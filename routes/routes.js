@@ -1,7 +1,14 @@
-var express = require('express')
-var queries = require('../db/queries.js')
+const express = require('express');
+const queries = require('../db/queries.js');
+const passport = require('passport');
 
-var router = express.Router()
+const env = {
+  AUTH0_CLIENT_ID: 'p9Ckvwt-zR0jR-oU73QZl-uoxycmGDIR',
+  AUTH0_DOMAIN: 'joscelyn-james.auth0.com',
+  AUTH0_CALLBACK_URL: 'http://localhost:3210/login'
+};
+
+var router = express.Router();
 
 router.get('/blog', (req, res) => {
   queries
@@ -10,7 +17,7 @@ router.get('/blog', (req, res) => {
     .then(blogPosts => {
       res.json(blogPosts)
     })
-})
+});
 
 router.get('/blog/:id', (req, res) => {
   queries
@@ -19,7 +26,7 @@ router.get('/blog/:id', (req, res) => {
     .then(blog => {
       res.json(blog)
     })
-})
+});
 
 router.get('/blog/:id/comments', (req, res) => {
   queries
@@ -28,7 +35,7 @@ router.get('/blog/:id/comments', (req, res) => {
     .then(comments => {
       res.json(comments)
     })
-})
+});
 
 router.post('/blogpost', (req, res) => {
   queries
@@ -37,7 +44,7 @@ router.post('/blogpost', (req, res) => {
     .then(post => {
       res.send(post)
     })
-})
+});
 
 router.post('/commentpost', (req, res) => {
   queries
@@ -46,7 +53,7 @@ router.post('/commentpost', (req, res) => {
     .then(post => {
       res.send('sucsess')
     })
-})
+});
 
 router.patch('/editblog', (req, res) => {
   queries
@@ -55,7 +62,7 @@ router.patch('/editblog', (req, res) => {
     .then(patch => {
       res.json(patch)
     })
-})
+});
 
 router.patch('/editcomment', (req, res) => {
   queries
@@ -64,7 +71,7 @@ router.patch('/editcomment', (req, res) => {
     .then(patch => {
       res.json(patch)
     })
-})
+});
 
 router.delete('/deleteblog/:id', (req, res) => {
   queries
@@ -73,7 +80,7 @@ router.delete('/deleteblog/:id', (req, res) => {
     .then(deleted => {
       res.json(deleted)
     })
-})
+});
 
 router.delete('/deletecomment/:id', (req, res) => {
   queries
@@ -82,6 +89,6 @@ router.delete('/deletecomment/:id', (req, res) => {
     .then(deleted => {
       res.json(deleted)
     })
-})
+});
 
 module.exports = router

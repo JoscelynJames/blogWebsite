@@ -19,14 +19,20 @@
   },
   "homepage": "https://github.com/JoscelynJames/gBlog#readme",
   "dependencies": {
+    "auth0-js": "^8.10.1",
     "body-parser": "^1.18.0",
+    "connect-ensure-login": "^0.1.1",
     "cors": "^2.8.4",
     "dotenv": "^4.0.0",
+    "eslint": "^4.7.2",
     "express": "^4.15.4",
     "jquery": "^3.2.1",
     "knex": "^0.13.0",
+    "passport": "^0.4.0",
+    "passport-auth0": "^0.6.0",
     "pg": "^7.3.0",
-    "sqlite3": "^3.1.10"
+    "sqlite3": "^3.1.10",
+    "video-game-name-generator": "^1.1.1"
   },
   "devDependencies": {}
 }

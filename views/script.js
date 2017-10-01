@@ -1,23 +1,25 @@
 $(document).ready(() => {
 
   $.ajax({
-    url: 'http://localhost:3210/blog',
-    type: 'GET'
-  })
-  .done((res) => {
-    let blog = $("#blog-template").html();
-    let template = Handlebars.compile(blog);
-    let context = {blogs: res}
-    let html = template(context);
+      url: 'http://localhost:3210/blog',
+      type: 'GET'
+    })
+    .done((res) => {
+      let blog = $("#blog-template").html();
+      let template = Handlebars.compile(blog);
+      let context = {
+        blogs: res
+      }
+      let html = template(context);
 
-    $('#blog-main').append(html);
+      $('#blog-main').append(html);
 
-    var creationTime = $('.time');
-    creationTime.text(creationTime.text().substring(0,11))
-  })
-  .fail((err) => {
-    console.log('err', err)
-  });
+      var creationTime = $('.time');
+      creationTime.text(creationTime.text().substring(0, 11))
+    })
+    .fail((err) => {
+      console.log('err', err)
+    });
 
   window.setTimeout(() => {
     $('.edit-icon').hide();
@@ -35,21 +37,16 @@ $(document).ready(() => {
 
     $('#edit-icon').click((e) => {
       var url = window.location.href;
-      var query = url.substring( url.indexOf('?') + 2 );
+      var query = url.substring(url.indexOf('?') + 2);
       console.log(query);
       $.ajax({
-        url: 'http://localhost:3210/deleteblog/' + query,
-        type: 'DELETE'
-      })
-      .done((res) => {
-        location.reload()
-      })
+          url: 'http://localhost:3210/deleteblog/' + query,
+          type: 'DELETE'
+        })
+        .done((res) => {
+          location.reload()
+        })
     })
   }, 500);
-
-
-
-
-
 
 })
