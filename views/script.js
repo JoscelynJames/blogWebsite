@@ -1,7 +1,7 @@
 $(document).ready(() => {
 
   $.ajax({
-      url: 'http://localhost:3210/blog',
+      url: 'https://localhost:3210/blog',
       type: 'GET'
     })
     .done((res) => {

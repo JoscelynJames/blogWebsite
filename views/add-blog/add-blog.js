@@ -14,25 +14,25 @@ $(document).ready(() => {
     };
 
     $.post({
-      url: 'http://localhost:3210/blogpost',
-      data: data,
-    })
-    .done((res) => {
-      var blogId = res[0]['id'];
-      window.location.href = `http://localhost:3000/blog/index.html?=${blogId}`;
-    })
-    .fail((err) => {
+        url: 'http://localhost:3210/blogpost',
+        data: data,
+      })
+      .done((res) => {
+        var blogId = res[0]['id'];
+        window.location.href = `http://localhost:3000/blog/index.html?=${blogId}`;
+      })
+      .fail((err) => {
 
-    })
+      })
   });
 
-  $('.form-floating-label input, .form-floating-label textarea').focusin(function(){
-  $(this).parent().addClass('has-value');
+  $('.form-floating-label input, .form-floating-label textarea').focusin(function() {
+    $(this).parent().addClass('has-value');
   });
 
-  $('.form-floating-label input, .form-floating-label textarea').blur(function(){
-    if(!$(this).val().length > 0) {
+  $('.form-floating-label input, .form-floating-label textarea').blur(function() {
+    if (!$(this).val().length > 0) {
       $(this).parent().removeClass('has-value');
-  }
-});
+    }
+  });
 })
