@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css"  crossorigin="anonymous" />
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
+
+<head>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.4.3/css/foundation.min.css" crossorigin="anonymous" />
+  <meta charset="utf-8">
+  <title></title>
+</head>
+
+<body>
   <!-- Start nav bar -->
   <nav id="nav-bar">
     <ul class="menu menu-hover-lines align-spaced">
       <li>Gblog</li>
-      <li class="active"><a >Home</a></li>
+      <li class="active"><a>Home</a></li>
       <li><a class="active" href="/add-blog/index.html">Blog</a></li>
       <li><a id="loginBtn">You</a></li>
     </ul>
@@ -27,7 +29,7 @@
             <a href="/add-blog/index.html">
               <img id="add-icon" src="add.png">
             </a>
-            <a >
+            <a>
               <img id="edit-icon" src="edit.png">
             </a>
           </div>
@@ -37,24 +39,24 @@
 
     <script id="blog-template" type="text/x-handlebars-template">
       {{#each blogs}}
-        <div class="tile">
-          <a href="/edit-blog/index.html?={{id}}">
+      <div class="tile">
+        <a href="/edit-blog/index.html?={{id}}">
             <img class="edit-icon" src="edit.png">
           </a>
-          <a href="/deleteblog?={{id}}">
+        <a href="/deleteblog?={{id}}">
             <img class="delete-icon" src="delete.png">
           </a>
-          <article class="article-row">
-            <div class="article-row-content">
-              <a href="/blog/index.html?={{id}}">
-                <h1 id={{id}} class="article-row-content-header title"> {{title}} </h1>
-              </a>
-              <p class="article-row-content-author author"> {{author}} </p>
-              <time class="article-row-content-time time"> {{creation_time}} </time>
-              <p class="article-row-content-description body"> {{body}} </p>
-            </div>
-          </article>
-        </div>
+        <article class="article-row">
+          <div class="article-row-content">
+            <a href="/blog/index.html?={{id}}">
+              <h1 id={{id}} class="article-row-content-header title"> {{title}} </h1>
+            </a>
+            <p class="article-row-content-author author"> {{author}} </p>
+            <time class="article-row-content-time time"> {{creation_time}} </time>
+            <p class="article-row-content-description body"> {{body}} </p>
+          </div>
+        </article>
+      </div>
       {{/each}}
     </script>
   </section>
@@ -76,5 +78,6 @@
   <script src="script.js"></script>
   <script src="login.js"></script>
 
-  </body>
+</body>
+
 </html>

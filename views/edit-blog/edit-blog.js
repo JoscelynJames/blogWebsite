@@ -35,7 +35,7 @@ console.log(query);
       title: $('#title').val(),
       author: $('#name').val(),
       body: $('#body').val(),
-      id: query
+      id
     }
     $.ajax({
       url: 'http://localhost:3210/editblog',
