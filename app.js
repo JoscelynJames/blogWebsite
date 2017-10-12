@@ -33,7 +33,7 @@ const strategy = new Auth0Strategy(
     domain: 'joscelyn-james.auth0.com',
     clientID: 'p9Ckvwt-zR0jR-oU73QZl-uoxycmGDIR',
     clientSecret: 'dr3-wfjRBTEuoR97i0p03bgh2lo73kwFwohPtwDE1YSG-arZ88eBPodOWZLvyG6M',
-    callbackURL: 'http://localhost:3210/callback'
+    callbackURL: '${herokuURL}/callback'
   },
   (accessToken, refreshToken, extraParams, profile, done) => {
     return done(null, profile);

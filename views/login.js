@@ -1,5 +1,6 @@
 var userProfile;
 $(() => {
+  const herokuURL = 'https://gblog-db.herokuapp.com';
 
   const webAuth = new auth0.WebAuth({
     domain: 'joscelyn-james.auth0.com',

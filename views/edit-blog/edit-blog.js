@@ -1,11 +1,12 @@
 $(document).ready(() => {
+  const herokuURL = 'https://gblog-db.herokuapp.com';
   //get query
   var url = window.location.href;
   var query = url.substring( url.indexOf('?') + 2 );
 console.log(query);
   //make ajax call for that blog
   $.ajax({
-    url: `http://localhost:3210/blog/${query}/`,
+    url: `${herokuURL}/blog/${query}/`,
     type: 'GET'
   })
   .done((res) => {
@@ -38,7 +39,7 @@ console.log(query);
       id
     }
     $.ajax({
-      url: 'http://localhost:3210/editblog',
+      url: '${herokuURL}/editblog',
       type: 'PATCH',
       data: data
     })

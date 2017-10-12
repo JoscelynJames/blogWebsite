@@ -1,10 +1,11 @@
 $(document).ready(() => {
   //Save the url query
+  const herokuURL = 'https://gblog-db.herokuapp.com';
   var url = window.location.href;
   var query = url.substring(url.indexOf('?') + 2);
   //start make get request to blog/:id
   $.ajax({
-      url: `http://localhost:3210/blog/${query}/`,
+      url: `${herokuURL}/blog/${query}/`,
       type: 'GET'
     })
     .done((res) => {
@@ -26,11 +27,10 @@ $(document).ready(() => {
 
   //start get request to blog/:id/comments
   $.ajax({
-      url: `http://localhost:3210/blog/${query}/comments`,
+      url: `${herokuURL}/blog/${query}/comments`,
       type: 'GET'
     })
     .done((res) => {
-
       let blog = $("#comments-template").html();
       let template = Handlebars.compile(blog);
       let context = {
@@ -75,7 +75,7 @@ $(document).ready(() => {
       blog_id: blogId
     };
     $.post({
-        url: `http://localhost:3210/commentpost`,
+        url: `${herokuURL}/commentpost`,
         data: data
       })
       .done((res) => {
@@ -89,7 +89,7 @@ $(document).ready(() => {
       var commentId = e.target.id;
 
       $.ajax({
-          url: `http://localhost:3210/deletecomment/${commentId}/`,
+          url: `${herokuURL}/deletecomment/${commentId}/`,
           type: 'DELETE'
         })
         .done((res) => {
@@ -101,11 +101,8 @@ $(document).ready(() => {
     })
     //delete blog
     $("#delete-icon").click((e) => {
-      let url = window.location.href;
-      let query = url.substring(url.indexOf('?') + 2);
-
       $.ajax({
-          url: 'http://localhost:3210/deleteblog/' + query,
+          url: `${herokuURL}/deleteblog/${query}`,
           type: 'DELETE'
         })
         .done((res) => {

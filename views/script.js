@@ -1,7 +1,8 @@
 $(document).ready(() => {
+  const herokuURL = 'https://gblog-db.herokuapp.com';
 
   $.ajax({
-      url: 'https://localhost:3210/blog',
+      url: `${herokuURL}/blog`,
       type: 'GET'
     })
     .done((res) => {
@@ -40,7 +41,7 @@ $(document).ready(() => {
       var query = url.substring(url.indexOf('?') + 2);
       console.log(query);
       $.ajax({
-          url: 'http://localhost:3210/deleteblog/' + query,
+          url: '${herokuURL}/deleteblog/' + query,
           type: 'DELETE'
         })
         .done((res) => {

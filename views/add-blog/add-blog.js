@@ -1,4 +1,5 @@
 $(document).ready(() => {
+  const herokuURL = 'https://gblog-db.herokuapp.com';
 
   $('#submit-blog-button').click((e) => {
     e.preventDefault()
@@ -14,7 +15,7 @@ $(document).ready(() => {
     };
 
     $.post({
-        url: 'http://localhost:3210/blogpost',
+        url: `${herokuURL}/blogpost`,
         data: data,
       })
       .done((res) => {
